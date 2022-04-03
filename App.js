@@ -12,16 +12,16 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SplashScreen from './Screen/SplashScreen';
 import LoginScreen from './Screen/LoginScreen';
 import RegisterScreen from './Screen/RegisterScreen';
-
+import NativeL from './Screen/NativeL';
 const Stack = createNativeStackNavigator();
 
 const Auth = () => {
   // Stack Navigator for Login and Sign up Screen
   return (
-    <Stack.Navigator initialRouteName="LoginScreen">
+    <Stack.Navigator initialRouteName="NativeL">
       <Stack.Screen
-        name="LoginScreen"
-        component={LoginScreen}
+        name="NativeL"
+        component={NativeL}
         options={{headerShown: false}}
       />
       <Stack.Screen
