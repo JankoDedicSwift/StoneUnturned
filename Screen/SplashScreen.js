@@ -10,24 +10,26 @@ import {
   Image
 } from 'react-native';
 
-// import AsyncStorage from '@react-native-community/async-storage';
+
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const SplashScreen = ({navigation}) => {
   //State for ActivityIndicator animation
   const [animating, setAnimating] = useState(true);
 
   useEffect(() => {
-    // setTimeout(() => {
-    //   setAnimating(false);
+    setTimeout(() => {
+      setAnimating(false);
       //Check if user_id is set or not
       //If not then send for Authentication
       //else send to Home Screen
-    //   AsyncStorage.getItem('user_id').then((value) =>
-    //     navigation.replace(
-    //       value === null ? 'Auth' : 'DrawerNavigationRoutes'
-    //     ),
-    //   );
-    // }, 5000);
+      AsyncStorage.getItem('user_id').then((value) =>
+        navigation.replace(
+          value === null ? 'Auth' : 'DrawerNavigationRoutes'
+        ),
+      );
+
+    }, 2000);
   }, []);
 
   return (
