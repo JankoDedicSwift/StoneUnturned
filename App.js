@@ -3,6 +3,8 @@
 // import 'react-native-gesture-handler';
 
 // Import React and Component
+import 'react-native-gesture-handler';
+
 import React from 'react';
 
 // Import Navigators from React Navigation
@@ -13,15 +15,18 @@ import SplashScreen from './Screen/SplashScreen';
 import LoginScreen from './Screen/LoginScreen';
 import RegisterScreen from './Screen/RegisterScreen';
 import NativeL from './Screen/NativeL';
+// import DrawerNavigationRoutes from './Screen/DrawerNavigationRoutes';
+import HomeScreen from './Screen/DrawerScreens/HomeScreen';
+
 const Stack = createNativeStackNavigator();
 
 const Auth = () => {
   // Stack Navigator for Login and Sign up Screen
   return (
-    <Stack.Navigator initialRouteName="NativeL">
+    <Stack.Navigator initialRouteName="LoginScreen">
       <Stack.Screen
-        name="NativeL"
-        component={NativeL}
+        name="LoginScreen"
+        component={LoginScreen}
         options={{headerShown: false}}
       />
       <Stack.Screen
@@ -58,7 +63,12 @@ const App = () => {
           options={{headerShown: false}}
         />
         {/* Navigation Drawer as a landing page */}
-       
+        <Stack.Screen
+          name="HomeScreen"
+          component={HomeScreen}
+          // Hiding header for Navigation Drawer
+          options={{headerShown: false}}
+        />
  
       </Stack.Navigator>
     </NavigationContainer>
